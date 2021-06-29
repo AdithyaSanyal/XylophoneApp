@@ -11,13 +11,16 @@ class XylophoneApp extends StatelessWidget {
     player.play('note$soundnumber.wav');
   }
 
+  // ignore: non_constant_identifier_names
   Expanded BuildKey(int no, Color color) {
     return Expanded(
-      child: FlatButton(
-        color: color,
-        onPressed: () {
+      child: GestureDetector(
+        onTap: () {
           playsound(no);
         },
+        child: Container(
+          color: color,
+        ),
       ),
     );
   }
